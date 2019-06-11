@@ -13,7 +13,7 @@ void  ATankAIController::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Controller Targeting: %s"), *(PlayerTank->GetName()));
+		//UE_LOG(LogTemp, Warning, TEXT("AI Controller Targeting: %s"), *(PlayerTank->GetName()));
 	}
 
 }
