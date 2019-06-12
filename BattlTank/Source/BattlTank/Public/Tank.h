@@ -18,6 +18,7 @@ public:
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 protected:
+	//Variables
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
 private:
@@ -32,7 +33,10 @@ private:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 	
+	//Variables
+	
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 40000.0f; //TODO find sensible default
 	
 };
