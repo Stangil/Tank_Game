@@ -1,14 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include "Tank.h"
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"// needs to be included last
 
-/**
- * 
- */
+//Forward declaration
+class ATank;
 UCLASS()
 class BATTLTANK_API ATankPlayerController : public APlayerController
 {
