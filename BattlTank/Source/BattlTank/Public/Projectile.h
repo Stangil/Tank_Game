@@ -2,7 +2,9 @@
 
 #pragma once
 
+#include "Engine/World.h"
 #include "CoreMinimal.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "GameFramework/Actor.h"
 #include "Projectile.generated.h"
 
@@ -19,10 +21,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void LaunchProjectile(float Speed);
 
-	
-	
+private:
+		UProjectileMovementComponent* ProjectileMovement = nullptr;
+
 };
