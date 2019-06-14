@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include "Engine/World.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"// Must be last include
 
@@ -8,6 +9,8 @@
 class UTankBarrel; 
 class UTankTurret;
 class UTankAimingComponent;
+class AProjectile;
+
 UCLASS()
 class BATTLTANK_API ATank : public APawn
 {
@@ -40,5 +43,9 @@ private:
 	
 	UPROPERTY(EditAnywhere, Category = Firing)
 	float LaunchSpeed = 5000.0f; 
-	
+
+	UPROPERTY(EditAnywhere, Category = Setup)
+	TSubclassOf<AProjectile> ProjectileBlueprint;
+	//Local barrel reference for spawing projectile
+	UTankBarrel* Barrel = nullptr;
 };
