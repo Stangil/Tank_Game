@@ -41,14 +41,18 @@ private:
 	
 	//Variables
 	
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float LaunchSpeed = 5000.0f; 
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float ReloadTimeInSeconds = 3.0f;
+
+	double LastFireTime = 0.0;// double because FPlatformTime::Seconds(); returns a double
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 	//Local barrel reference for spawing projectile
 	UTankBarrel* Barrel = nullptr;
 
-	float ReloadTimeInSeconds = 3.0f;
-	double LastFireTime = 0.0;// double because FPlatformTime::Seconds(); returns a double
+
 };
