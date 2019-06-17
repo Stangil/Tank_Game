@@ -48,4 +48,7 @@ private:
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 	//Local barrel reference for spawing projectile
 	UTankBarrel* Barrel = nullptr;
+
+	float ReloadTimeInSeconds = 3.0f;
+	double LastFireTime = 0.0;// double because FPlatformTime::Seconds(); returns a double
 };
