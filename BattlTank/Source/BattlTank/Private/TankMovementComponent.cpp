@@ -18,9 +18,16 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 	RightTrack->SetThrottle(Throw);
 	//TODOD prevent double-speed due to double input
 }
+
+void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
+{
+	//No need to call Super
+	auto TankName = GetOwner()->GetName();
+	auto MoveVelocityString = MoveVelocity.ToString();
+	UE_LOG(LogTemp, Warning, TEXT("%s MoveVector to: %s"), *TankName, *(MoveVelocityString));
+}
 void UTankMovementComponent::IntendTurnRight(float Throw)
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Intend move forward: %f"), Throw);
 	if (!LeftTrack || !RightTrack) { return; };
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(-Throw);
