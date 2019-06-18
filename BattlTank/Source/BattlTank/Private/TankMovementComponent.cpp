@@ -21,10 +21,14 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 
 void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
 {
-	//No need to call Super
-	auto TankForward = GetOwner()->GetActorForwardVector();
-	auto AIForwardIntention = MoveVelocity.GetSafeNormal();
-	IntendMoveForward(FVector::DotProduct(TankForward, AIForwardIntention));
+	///No need to call Super
+	FVector TankForward = GetOwner()->GetActorForwardVector();
+	FVector AIForwardIntention = MoveVelocity.GetSafeNormal();
+	float ForwardThrow = FVector::DotProduct(TankForward, AIForwardIntention);
+	float RightThrow = FVector::CrossProduct(TankForward, AIForwardIntention).Z;
+	IntendMoveForward(ForwardThrow);
+	IntendTurnRight(RightThrow);
+
 	//UE_LOG(LogTemp, Warning, TEXT("%s MoveVector to: %s"), *TankName, *(AIForwardIntention.ToString()));
 }
 void UTankMovementComponent::IntendTurnRight(float Throw)
