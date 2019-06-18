@@ -1,4 +1,4 @@
-
+//Copyright Microgames
 #pragma once
 
 #include "CoreMinimal.h"
