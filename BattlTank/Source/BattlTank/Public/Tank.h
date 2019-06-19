@@ -22,7 +22,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Firing")
 	void Fire();
-
 protected:
 	//Variables
 	UPROPERTY(BlueprintReadOnly)
@@ -32,6 +31,8 @@ protected:
 	UTankMovementComponent* TankMovementComponent = nullptr;
 
 private:
+
+	void BeginPlay();
 	// Sets default values for this pawn's properties
 	ATank();
 
