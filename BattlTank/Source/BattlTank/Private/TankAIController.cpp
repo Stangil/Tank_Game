@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "TankAimingComponent.h"
 #include "TankAIController.h"
+#include "TankAimingComponent.h"
 #include "Engine/World.h"
 
 
@@ -23,8 +23,8 @@ void ATankAIController::Tick(float DeltaTime)
 		if (!ensure(AimingComponent)) { return; }
 		//Aim towards the player
 		AimingComponent->AimAt(PlayerTank->GetActorLocation());
-		//TODO Fix firing
-		//ControlledTank->Fire();//TODO Limit firing rate
+		
+		AimingComponent->Fire();//TODO Limit firing rate
 }
 
 
