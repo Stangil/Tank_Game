@@ -30,9 +30,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Firing")
 	void Fire();
 
-protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-	EFiringState FiringState = EFiringState::Locked;
+		EFiringState FiringState = EFiringState::Locked;
+protected:
+
 
 private:	
 	
